@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+$phone_max-width: 480px;
+$tablet_max-width: 768px;
+$tablet_min-width: 480px;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 15%;
+    height: 60px;
+    background-color: white;
+    p {
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+    button {
+      font-size: 1rem;
+      height: 40px;
+      width: 80px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      font-weight: 400;
+    }
+    button:hover {
+      background-color: #005eff;
+    }
+  }
+}
+
+header {
+  height: 70vh;
+  background-image: url("../images/bg-masthead.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  @media screen and (max-width: $phone_max-width) {
+    div:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      gap: 5px;
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 2.5rem;
+    @media screen and (max-width: $phone_max-width) {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    @media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+      font-size: 1.7rem;
+      text-align: center;
+    }
+  }
+
+  input {
+    border: none;
+    width: 420px;
+    height: 45px;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    @media screen and (max-width: $phone_max-width) {
+      width: 250px;
+    }
+    @media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+      width: 330px;
+    }
+  }
+  button {
+    font-size: 1rem;
+    height: 40px;
+    width: 130px;
+    max-width: 130px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 400;
+    @media (max-width: $phone_max-width) {
+      min-width: 260px;
+    }
+    @media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+      width: 100px;
+    }
+  }
+  button:hover {
+    background-color: #005eff;
+  }
+}
+
+.features {
+  height: 40vh;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $phone_max-width) {
+    flex-direction: column;
+    height: 70vh;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      text-align: center;
+      width: 70%;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+    i {
+      font-size: 60px;
+      color: #007bff;
+    }
+    h2 {
+      @media screen and (min-width: $tablet_min-width) and (max-width: $tablet_max-width) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+main {
+  height: auto;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  @media screen and (max-width: $phone_max-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    img:nth-of-type(1) {
+      order: 1;
+    }
+    img:nth-of-type(2) {
+      order: 3;
+    }
+    img:nth-of-type(3) {
+      order: 5;
+    }
+    div:nth-of-type(1) {
+      order: 2;
+    }
+    div:nth-of-type(2) {
+      order: 4;
+    }
+    div:nth-of-type(3) {
+      order: 6;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    width: 65%;
+    padding-left: 25%;
+
+    @media screen and (max-width: $phone_max-width) {
+      padding: 30px 0px;
+      width: 80%;
+    }
+  }
+
+  p {
+    padding-top: 10px;
+    font-weight: 300;
+  }
+
+  div:nth-of-type(even) {
+    grid-column: 2;
+  }
+
+  img {
+    width: 1024px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  img:nth-of-type(even) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.testimonials {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  margin: auto;
+  text-align: center;
+  background-color: #f8f9fa;
+
+  .testimonials-flex-wrapper {
+    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 25%;
+      padding-top: 5vh;
+      img {
+        width: 70%;
+        border-radius: 100%;
+        object-fit: cover;
+        @media screen and (max-width: $phone_max-width) {
+          width: 200px;
+        }
+      }
+
+      h2 {
+        width: 140px;
+        @media screen and (max-width: $phone_max-width) {
+          min-width: 300px;
+        }
+      }
+      p {
+        width: 100%;
+        padding-top: 10px;
+        font-weight: 300;
+        @media screen and (max-width: $phone_max-width) {
+          width: 250px;
+        }
+      }
+    }
+    @media screen and (max-width: $phone_max-width) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: $phone_max-width) {
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+  }
+}
+
+.footer-top {
+  height: 30vh;
+  background: url("../images/bg-masthead.jpg");
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  h2 {
+    color: white;
+    font-size: 1.8rem;
+    @media screen and (max-width: $phone_max-width) {
+      font-size: 1.3rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  input {
+    border: none;
+    width: 420px;
+    height: 45px;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    @media screen and (max-width: $phone_max-width) {
+      width: 100%;
+    }
+    @media screen and (min-width: $tablet_min-width) and (max-width: $tablet_max-width) {
+      width: 300px;
+    }
+  }
+  button {
+    font-size: 1rem;
+    height: 40px;
+    width: 130px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 400;
+    button:hover {
+      background-color: #005eff;
+    }
+    @media screen and (max-width: $phone_max-width) {
+      width: 105%;
+      margin-top: 5px;
+    }
+    @media screen and (min-width: $tablet_min-width) and (max-width: $tablet_max-width) {
+      width: 90px;
+      margin-top: 5px;
+    }
+  }
+}
+footer {
+  height: 200px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-around;
+
+  div {
+    align-self: center;
+  }
+
+  p:nth-of-type(1) {
+    color: #007bff;
+    font-weight: 300;
+  }
+
+  span {
+    color: black;
+    font-size: 0.5rem;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  p:nth-of-type(2) {
+    padding-top: 10px;
+    font-weight: 300;
+    font-size: 0.9rem;
+    @media screen and (max-width: $phone_max-width) {
+      text-align: center;
+    }
+  }
+
+  i {
+    font-size: 25px;
+    color: #007bff;
+
+    &:hover {
+      color: #005eff;
+    }
+  }
+
+  div:nth-of-type(2) {
+    display: flex;
+    gap: 20px;
+  }
+  @media screen and (max-width: $phone_max-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 15px;
+  }
+}
