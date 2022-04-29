@@ -115,14 +115,16 @@ header {
 }
 
 .features {
-  height: 40vh;
+  height: auto;
+  padding: 5vh 0vh;
   background-color: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: $phone_max-width) {
     flex-direction: column;
-    height: 70vh;
+    height: auto;
+    padding: 5vh 0vh;
   }
   div {
     display: flex;
