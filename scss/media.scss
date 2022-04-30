@@ -193,4 +193,11 @@ footer {
     align-self: center;
     gap: 15px;
   }
+  div:nth-of-type(1) {
+    @media screen and (max-width: 347px) {
+      text-align: center;
+      width: 80%;
+      height: auto;
+    }
+  }
 }
