@@ -1,0 +1,26 @@
+.features {
+  height: auto;
+  padding: 5vh 0vh;
+  background-color: $bg-color-white-300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      text-align: center;
+      width: 70%;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+    i {
+      font-size: 60px;
+      color: $font-color-blue;
+    }
+  }
+}
